@@ -24,19 +24,3 @@ RSpec.describe Person, :type => :model do
   end
 end
 
-RSpec.describe User, :type => :model do
-  it "has the user type" do
-    henk = User.new(first_name: 'Henk', last_name:"Vries", surname_prefix: "de", email:"henkdevries@voorbeeld.nl")
-    expect(henk.type).to eq "User"
-  end
-  it "requires an email address" do
-    henk = User.new(first_name: 'Henk', last_name:"Vries", surname_prefix: "de")
-    expect(henk.valid?).to be false
-  end
-  it "enforces a unique email address" do
-    henk = User.create(first_name: 'Henk', last_name:"Vries", surname_prefix: "de", email:"henkdevries@voorbeeld.nl")
-    henk2 = User.new(first_name: 'Henk', last_name:"Vries", surname_prefix: "de", email:"henkdevries@voorbeeld.nl")
-    expect(henk2).to be_invalid
-  end
-end
-

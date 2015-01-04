@@ -27,6 +27,7 @@ gem 'spring',        group: :development
 # Rspec is for testing
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-collection_matchers'
   gem 'capybara'
 end
 
