@@ -1,0 +1,11 @@
+<%= form_tag("/sessions") do %>
+  E-mail address:<input type="email" name="email"><br>
+  Password:<input type="text" name="password"><br>
+  <br> 
+  <%= submit_tag("Log in!", class: 'button') %>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class='alert-box alert'><%= flash[:alert] %>
+  <a href="#" class="close">&times;</a>
+<% end %>
