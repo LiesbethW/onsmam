@@ -1,5 +1,6 @@
 class Person < ActiveRecord::Base
-
+  validates :first_name, :last_name, presence: true
+  validates :email, format: { with: /.+@.+\..+/, message: "This is not a valid e-mail address."}
 
 	def name
     if not surname_prefix.blank?
@@ -8,4 +9,6 @@ class Person < ActiveRecord::Base
       "#{first_name} #{last_name}"
     end
 	end
+
+
 end
