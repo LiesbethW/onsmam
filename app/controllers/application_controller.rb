@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     if not @_current_user
-      redirect_to :new_session
+      redirect_to :new_sessions
     end
   end
 

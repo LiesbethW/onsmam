@@ -12,6 +12,11 @@
   </head>
 
   <body>
+    <header>
+      <% if @_current_user %>
+      <%= link_to("Log out", "/sessions", method: :delete) %>
+      <% end %>
+    </header>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

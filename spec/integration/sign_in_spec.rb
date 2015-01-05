@@ -39,4 +39,16 @@ describe "the signin process", :type => :feature do
     expect(page.current_path).to eq "/people"
   end
   
+  it "shows a logout button when logged in and redirects to sessions/new upon clicking it" do
+    login()
+    expect(page).to have_link('Log out')
+    click_link 'Log out'
+    expect(page.current_path).to eq "/sessions/new"
+    expect(page).to have_text("Logged out")
+  end
+
+  it "does not show a logout button when not logged in" do
+    visit "/sessions/new"
+    expect(page).to_not have_link('Log out')
+  end
 end 
