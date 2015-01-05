@@ -8,3 +8,5 @@
 
 liesbeth = Person.create({first_name: "Liesbeth", last_name: "Wijers"})
 steven = Person.create({first_name: "Steven", last_name: "Vegt", surname_prefix:"van der"})
+jan = User.create(first_name: 'Jan', last_name:"Vries", surname_prefix: "de", email:"jandevries@voorbeeld.nl", encrypted_password:"12345")
+henk = User.create(first_name: 'Henk', last_name:"Vries", surname_prefix: "de", email:"henkdevries@voorbeeld.nl", encrypted_password:"12345")

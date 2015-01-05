@@ -1,7 +1,9 @@
 # People controller
 
 class PeopleController < ApplicationController
-	def index
-		@people = Person.all
-	end
+	
+  def index
+    @people = Person.all
+  end
+
 end

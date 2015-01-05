@@ -9,4 +9,6 @@ describe 'people/index.html.erb' do
     expect(rendered).to have_content('Jan')
     expect(rendered).to have_content('Janneke')
   end
+
+
 end
