@@ -14,14 +14,14 @@ class SessionsController < ApplicationController
       session[:current_user_id] = user.id
       redirect_to "/people"
     else
-      redirect_to :new_sessions, alert: "Wrong username or password"
+      redirect_to :new_session, alert: "Wrong username or password"
     end
   end
 
   def destroy
     @_current_user = nil
     session[:current_user_id] = nil
-    redirect_to :new_sessions, notice: "Logged out"
+    redirect_to :new_session, notice: "Logged out"
   end
 
 end
