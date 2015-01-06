@@ -1,0 +1,19 @@
+
+<h1>De patienten</h1>
+
+<table id="patients">
+ <tr>
+  <th>Name</th>
+ </tr>
+ <tbody>
+  <% @patients.each do |patient| %>
+  <tr>
+    <td>
+     <%= patient.name %>
+  </td>
+  </tr>
+  <% end %>
+
+ </tbody>
+
+</table>

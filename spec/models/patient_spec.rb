@@ -14,5 +14,9 @@ RSpec.describe Patient, :type => :model do
     lois = Patient.new(first_name: 'Clark', last_name: 'Kent', bsn: '12345678')
     expect(lois).to have(1).error_on(:bsn)
   end
+
+  it "has the patient type" do
+    expect(@lois.type).to eq 'Patient'
+  end
   
 end
