@@ -1,0 +1,6 @@
+<%= form_for @patient, url: {action: 'create'}, html: {class: 'nifty_form'} do |f| %>
+  <%= f.label :first_name %> <%= f.text_field :first_name %>
+  <%= f.label :surname_prefix %><%= f.text_field :surname_prefix %>
+  <%= f.label :last_name %><%= f.text_field :last_name %>
+  <%= f.submit 'Add patient' %>
+<% end %>

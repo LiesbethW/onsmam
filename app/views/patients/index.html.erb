@@ -1,6 +1,8 @@
 
 <h1>De patienten</h1>
 
+<%= link_to('New patient', new_patient_path) %>
+
 <table id="patients">
  <tr>
   <th>Name</th>
@@ -15,5 +17,13 @@
   <% end %>
 
  </tbody>
+
+<% if flash[:notice] %>
+  <div data-alert class='alert-box notice'>
+    <%= flash[:notice] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
+
 
 </table>
