@@ -9,9 +9,12 @@
  </tr>
  <tbody>
   <% @patients.each do |patient| %>
+ 
   <tr>
     <td>
+     <a href='<%= patient_path(patient) %>'>
      <%= patient.name %>
+     </a>
   </td>
   </tr>
   <% end %>

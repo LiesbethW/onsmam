@@ -10,6 +10,12 @@ RSpec.describe Patient, :type => :model do
     expect(clark).to have(1).error_on(:bsn)
   end
 
+  it 'allow multiple blank BSNs' do
+    kwik = Patient.create!(first_name: "Kwik", last_name: "Duck", bsn: '')
+    kwek = Patient.new(first_name: "Kwek", last_name: "Duck", bsn: '')
+    expect(kwek.save).to be true
+  end
+
   it "requires a BSN to have 9 characters" do
     lois = Patient.new(first_name: 'Clark', last_name: 'Kent', bsn: '12345678')
     expect(lois).to have(1).error_on(:bsn)

@@ -12,11 +12,26 @@
   </head>
 
   <body>
-    <header>
+  <div class="fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">ONSMam</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
       <% if @_current_user %>
-      <%= link_to("Log out", "/session", method: :delete) %>
-      <% end %>
-    </header>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="<%= 'active' if current_page?(controller: 'patients', action: 'index') %>">
+            <%= link_to("Patients", patients_path) %></li>      
+          <li class="divider"></li>
+          <li><%= link_to("Log out", "/session", method: :delete) %></li>  
+        </ul>
+      </section> 
+      <% end %>    
+    </nav>
+  </div>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

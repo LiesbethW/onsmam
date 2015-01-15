@@ -1,0 +1,30 @@
+<h1><%= @patient.name %></h1>
+
+<ul class="medium-block-grid-2 small-block-grid-1">
+  <li>
+    <ul>
+      <li>Name: <%= @patient.name %></li>
+      <li>Date of birth: <%= @patient[:date_of_birth] %></li>
+      <li>Gender: <% if @patient[:male] == true %>
+              Male
+          <% elsif @patient[:male] == false %>
+              Female
+          <% else %>unknown
+          <% end %> 
+      </li>
+      <li>BSN: <%= @patient[:bsn] %></li>
+    </ul>
+  </li>
+  <li>
+    <div style="height:200px;width:200px;background-color:blue;">Photo</div>
+  </li>
+    <li>
+    <ul>
+      <li><%= @patient[:address_street] %></li>
+      <li><%= @patient[:address_postal_code] %> <%= @patient[:address_city] %> </li>
+      <li><%= @patient[:email] %></li>
+      <li><%= @patient[:telephone_number] %></li>
+    </ul>
+  </li>
+
+</ul>

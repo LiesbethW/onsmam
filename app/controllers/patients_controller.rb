@@ -18,10 +18,14 @@ class PatientsController < PeopleController
 
   end
 
+  def show
+    @patient = Patient.find(params[:id])
+  end
+
   private
   def patient_params
-    params.require(:patient).permit(:first_name,:surname_prefix,:last_name,:date_of_birth,:address_street, 
-      :address_postal_code, :address_city, :email, :telephone_number, :insurance_no, :bsn)
+    params.require(:patient).permit(:first_name,:surname_prefix,:last_name,:date_of_birth,:male,
+      :address_street, :address_postal_code, :address_city, :email, :telephone_number, :insurance_no, :bsn)
   end   
   
 end
